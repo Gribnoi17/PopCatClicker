@@ -12,9 +12,13 @@ public static class Shop
     public static int CostBonus { get { CheckClass(); return _shopInteractor.CostBonus; } }
     public static int LevelBonus { get { CheckClass(); return _shopInteractor.LevelBonus; } }
     public static int ClickPowerBonus { get { CheckClass(); return _shopInteractor.ClickPowerBonus; } }
+    public static int CostSkin { get { CheckClass(); return _shopInteractor.CostSkin; } }
     public static bool IsInitialized { get; private set; }
 
+    public static List<Sprite> skins { get; set; }
+
     private static ShopInteractor _shopInteractor;
+
 
     public static void Initialize(ShopInteractor interactor)
     {

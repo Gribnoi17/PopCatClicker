@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ShopManager : MonoBehaviour
 {
+    [SerializeField] private List<Sprite> _skins;
     private ShopRepository _shopRepository;
     private ShopInteractor _shopInteractor;
 
@@ -16,7 +17,9 @@ public class ShopManager : MonoBehaviour
         _shopInteractor = new ShopInteractor(_shopRepository);
         _shopInteractor.Initialize();
 
-        //_shopInteractor.Reset();
+        Shop.skins = _skins;
+        _shopInteractor.Reset();
+        _shopInteractor.Reset();
 
     }
 
@@ -28,6 +31,5 @@ public class ShopManager : MonoBehaviour
     public void BuySkin()
     {
         Shop.BuySkin(Wallet.Money);
-        EventManager.OnBought();
     }
 }

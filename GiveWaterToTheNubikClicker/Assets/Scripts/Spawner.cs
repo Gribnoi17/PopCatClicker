@@ -14,8 +14,12 @@ public class Spawner : MonoBehaviour
 
     private void InstantiateMeowText()
     {
-        _meowTextTemp = Instantiate(_meowText, _spawnPointTransform.position, Quaternion.identity);
-        MoveMeowText();
+        var randInt = Random.Range(1, 10);
+        if (randInt == 3)
+        {
+            _meowTextTemp = Instantiate(_meowText, _spawnPointTransform.position, Quaternion.identity);
+            MoveMeowText();
+        }
     }
     private void MoveMeowText()
     {

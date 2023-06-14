@@ -10,6 +10,7 @@ public class ShopInteractor : Interactor
     public int CostBonus => _repository.CostBonus;
     public int LevelBonus => _repository.LevelBonus;
     public int ClickPowerBonus => _repository.ClickPowerBonus;
+    public int CostSkin => _repository.CostSkin;
 
     public ShopInteractor(ShopRepository repository)
     {
@@ -27,9 +28,14 @@ public class ShopInteractor : Interactor
         if (_repository.CostBonus <= value)
         {
             Wallet.SpendMoney(Shop.CostBonus);
-            _repository.CostBonus *= 5;
+            if (_repository.CostBonus > 10000)
+            {
+                _repository.CostBonus += 5500;
+                _repository.ClickPowerBonus += 5;
+            }
+            else
+                _repository.CostBonus *= 2;
             _repository.LevelBonus++;
-            _repository.ClickPowerBonus += 3;
             _repository.Save();
         }
 
@@ -37,10 +43,12 @@ public class ShopInteractor : Interactor
 
     public void BuySkin(int value)
     {
-        if (_repository.CostBonus <= value)
+        if (_repository.CostSkin <= value)
         {
-            Wallet.SpendMoney(Shop.CostBonus);
+            Wallet.SpendMoney(Shop.CostSkin);
+            _repository.CostSkin = 0;
             _repository.Save();
+            EventManager.OnBoughtSkin();
         }
 
     }
@@ -50,6 +58,7 @@ public class ShopInteractor : Interactor
         _repository.CostBonus = 20;
         _repository.LevelBonus = 0;
         _repository.ClickPowerBonus = 1;
+        _repository.CostSkin = 1000000;
         Wallet.SpendMoney(10000000);
         _repository.Save();
     }

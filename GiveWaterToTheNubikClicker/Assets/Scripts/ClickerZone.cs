@@ -2,12 +2,13 @@ using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ClickerZone : MonoBehaviour
 {
-
     private WalletRepository _walletRepository;
     private WalletInteractor _walletInteractor;
+    private Button _catButton;
 
     private void Start()
     {
@@ -16,6 +17,8 @@ public class ClickerZone : MonoBehaviour
 
         _walletInteractor = new WalletInteractor(_walletRepository);
         _walletInteractor.Initialize();
+
+        _catButton = GetComponent<Button>();
     }
 
     public void OnClick()
@@ -23,5 +26,4 @@ public class ClickerZone : MonoBehaviour
         Wallet.AddMoney(Shop.ClickPowerBonus);
         EventManager.OnClicked();
     }
-
 }
