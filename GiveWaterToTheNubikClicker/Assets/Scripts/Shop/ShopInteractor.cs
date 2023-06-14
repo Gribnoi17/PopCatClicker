@@ -28,13 +28,13 @@ public class ShopInteractor : Interactor
         if (_repository.CostBonus <= value)
         {
             Wallet.SpendMoney(Shop.CostBonus);
+
             if (_repository.CostBonus > 10000)
-            {
                 _repository.CostBonus += 5500;
-                _repository.ClickPowerBonus += 5;
-            }
             else
                 _repository.CostBonus *= 2;
+
+            _repository.ClickPowerBonus += 5;
             _repository.LevelBonus++;
             _repository.Save();
         }

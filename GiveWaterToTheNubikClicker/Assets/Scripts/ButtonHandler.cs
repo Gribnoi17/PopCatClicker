@@ -3,13 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 public class ButtonHandler : MonoBehaviour
 {
     [SerializeField] private Sprite[] _buttonSprites = null;
     [SerializeField] private Image _targetButton = null;
 
-
+    private void OnEnable()
+    {
+        YandexGame.OpenVideoEvent += Reward;
+    }
+    private void OnDisable()
+    {
+        YandexGame.OpenVideoEvent -= Reward;
+    }
     public void OpenAndClosePanel(GameObject panel)
     {
         panel.SetActive(!panel.activeInHierarchy);
