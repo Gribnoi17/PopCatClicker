@@ -8,7 +8,9 @@ using YG;
 public class ButtonHandler : MonoBehaviour
 {
     [SerializeField] private Sprite[] _buttonSprites = null;
+    [SerializeField] private Sprite[] _buttonSpritesPC = null;
     [SerializeField] private Image _targetButton = null;
+    [SerializeField] private Image _targetButtonPC = null;
 
     private void OnEnable()
     {
@@ -26,17 +28,35 @@ public class ButtonHandler : MonoBehaviour
 
     public void ChangeSpriteMusic()
     {
-        if (_buttonSprites != null)
+        if (Application.isMobilePlatform == true)
         {
-            if (_targetButton.sprite == _buttonSprites[0])
+            if (_buttonSprites != null)
             {
-                _targetButton.sprite = _buttonSprites[1];
+                if (_targetButton.sprite == _buttonSprites[0])
+                {
+                    _targetButton.sprite = _buttonSprites[1];
+                    EventManager.OnMusicChanged();
+                    return;
+                }
+                _targetButton.sprite = _buttonSprites[0];
                 EventManager.OnMusicChanged();
-                return;
             }
-            _targetButton.sprite = _buttonSprites[0];
-            EventManager.OnMusicChanged();
         }
+        else
+        {
+            if (_buttonSpritesPC != null)
+            {
+                if (_targetButtonPC.sprite == _buttonSpritesPC[0])
+                {
+                    _targetButtonPC.sprite = _buttonSpritesPC[1];
+                    EventManager.OnMusicChanged();
+                    return;
+                }
+                _targetButtonPC.sprite = _buttonSprites[0];
+                EventManager.OnMusicChanged();
+            }
+        }
+
     }
 
     public void Reward()
