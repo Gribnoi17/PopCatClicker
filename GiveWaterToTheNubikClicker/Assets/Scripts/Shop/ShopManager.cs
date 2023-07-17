@@ -18,9 +18,7 @@ public class ShopManager : MonoBehaviour
         _shopInteractor.Initialize();
 
         Shop.skins = _skins;
-        //_shopInteractor.Reset();
-        //_shopInteractor.Reset();
-
+        
     }
 
     public void BuyBonus()

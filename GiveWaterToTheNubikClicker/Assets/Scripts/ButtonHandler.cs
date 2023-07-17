@@ -61,7 +61,7 @@ public class ButtonHandler : MonoBehaviour
 
     public void Reward()
     {
-        Wallet.AddMoney(500);
+        Wallet.AddMoney(10000);
         EventManager.OnBought();
     }
 

@@ -30,7 +30,7 @@ public class ShopInteractor : Interactor
             Wallet.SpendMoney(Shop.CostBonus);
 
             if (_repository.CostBonus > 10000)
-                _repository.CostBonus += 5500;
+                _repository.CostBonus += 5000;
             else
                 _repository.CostBonus *= 2;
 
