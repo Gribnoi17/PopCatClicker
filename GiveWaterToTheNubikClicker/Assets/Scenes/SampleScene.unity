@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3721832, g: 0.6826872, b: 0.8728375, a: 1}
+  m_IndirectSpecularColor: {r: 0.37218383, g: 0.6826891, b: 0.8728381, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -421,7 +421,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2088,7 +2088,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.015000001, y: 0.061000004}
   m_AnchorMax: {x: 0.97400004, y: 0.74700004}
-  m_AnchoredPosition: {x: 1.4499512, y: -2.1300468}
+  m_AnchoredPosition: {x: 1.4499512, y: -2.130046}
   m_SizeDelta: {x: 1.0999999, y: 1.0900002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &624501923
@@ -2138,7 +2138,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 45.9
   m_fontSizeBase: 51.62
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3444,7 +3444,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 62
   m_fontSizeBase: 61.04
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5294,11 +5294,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.89
+      value: 3.66
       objectReference: {fileID: 0}
     - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.88
       objectReference: {fileID: 0}
     - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5882,7 +5882,7 @@ MonoBehaviour:
   _buttonSpritesPC:
   - {fileID: 21300000, guid: cd72311f1180af14db04c6aba447b34c, type: 3}
   - {fileID: 21300000, guid: 07b32c538f796844bbcd68c43da30dcf, type: 3}
-  _targetButton: {fileID: 0}
+  _targetButton: {fileID: 420051676}
   _targetButtonPC: {fileID: 201918003}
 --- !u!4 &1628775607
 Transform:
